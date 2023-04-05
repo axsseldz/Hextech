@@ -255,7 +255,6 @@ type Mutation {
     body: String
     tittle: String
     subreddit_id: ID
-    created_at: DateTime
     username: String
     image: String
   ): post
