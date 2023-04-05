@@ -1,0 +1,50 @@
+import React from 'react'
+import Image from 'next/image';
+import { ChevronDownIcon, HomeIcon, MagnifyingGlassCircleIcon } from '@heroicons/react/24/solid'
+import { Bars3Icon, BellIcon, ChatBubbleLeftIcon, GlobeAltIcon, MegaphoneIcon, PlusIcon, SparklesIcon, UserCircleIcon, VideoCameraIcon } from '@heroicons/react/24/outline'
+import { signIn } from 'next-auth/react'
+
+
+
+function Header() {
+    return (
+        <div className='flex sticky top-0 z-50 bg-black border-b-2 border-opacity-10 border-white px-4 py-2'>
+            <div className='w-20 cursor-pointer flex-shrink-0'>
+                <Image
+                    width={63}
+                    height={63}
+                    alt='icon'
+                    src="https://i.pinimg.com/474x/f1/96/60/f196607455500932e070e475eaed8dff.jpg"
+                />
+            </div>
+            <div className='flex items-center mx-7 lg:min-w-[250px]'>
+                <HomeIcon className='icon' />
+                <p className='ml-2 flex-1 hidden lg:inline'>Home</p>
+                <ChevronDownIcon className='icon' />
+            </div>
+            <form className='flex flex-1 items-center space-x-2 px-2 rounded-md border border-borderColor bg-lightDark my-1'>
+                <MagnifyingGlassCircleIcon className='icon' />
+                <input type='text' placeholder='Search Hextech' className='bg-lightDark flex-1 outline-none text-gray-500' />
+            </form>
+            <div className='items-center hidden lg:inline-flex'>
+                <SparklesIcon className='icon' />
+                <GlobeAltIcon className='icon' />
+                <VideoCameraIcon className='icon' />
+                <hr className='h-10 border border-borderColor' />
+                <ChatBubbleLeftIcon className='icon' />
+                <BellIcon className='icon' />
+                <PlusIcon className='icon' />
+                <MegaphoneIcon className='icon' />
+            </div>
+            <div className='flex items-center lg:hidden'>
+                <Bars3Icon className='icon' />
+            </div>
+            <div onClick={() => signIn()} className='hidden cursor-pointer items-center space-x-1 shrink-0 border border-borderColor px-2 rounded-sm my-1 lg:flex'>
+                <UserCircleIcon className='icon' />
+                <p className='text-gray-500'>Sign In</p>
+            </div>
+        </div >
+    )
+}
+
+export default Header
