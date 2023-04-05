@@ -7,6 +7,10 @@
   .icon {
     @apply h-7 w-7 text-gold cursor-pointer mx-2
   }
+
+  .hover-element {
+    transition: all 0.5s ease;
+  }
 }
 
 body {
