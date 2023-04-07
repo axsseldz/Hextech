@@ -149,6 +149,15 @@ type Query {
       table: "subreddit"
       configuration: "postgresql_config"
     )
+  subredditListByTopic(topic: String!): [subreddit]
+    @dbquery(
+      type: "postgresql"
+      schema: "public"
+      query: """
+      select * from "subreddit" where "topic" = $1
+      """
+      configuration: "postgresql_config"
+    )
   subredditPaginatedList(first: Int, after: Int): [subreddit]
     @dbquery(
       type: "postgresql"
@@ -300,10 +309,10 @@ type Mutation {
       dml: DELETE
       configuration: "postgresql_config"
     )
-  insertSubreddit(topic: String, created_at: DateTime): subreddit
+  insertSubreddit(topic: String): subreddit
     @dbquery(
       type: "postgresql"
-      schema: "public"
+      # schema: "public"
       table: "subreddit"
       dml: INSERT
       configuration: "postgresql_config"
