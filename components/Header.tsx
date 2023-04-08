@@ -13,6 +13,7 @@ function Header() {
         <div className='flex sticky top-0 z-50 bg-black border-b-2 border-opacity-10 border-white px-4 py-2'>
             <div className='w-20 cursor-pointer flex-shrink-0'>
                 <Image
+                    priority
                     width={63}
                     height={63}
                     alt='icon'

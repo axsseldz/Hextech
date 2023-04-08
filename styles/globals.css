@@ -11,6 +11,14 @@
   .hover-element {
     transition: all 0.5s ease;
   }
+
+  .postButtons {
+    @apply flex items-center space-x-1 text-sm font-semibold p-2 cursor-pointer rounded-sm
+  }
+
+  .voteButtons {
+    @apply h-6 w-6 p-1 rounded-md
+  }
 }
 
 body {

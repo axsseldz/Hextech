@@ -1,5 +1,6 @@
 import Head from "next/head";
 import PostBox from "@/components/PostBox";
+import Feed from "@/components/Feed";
 
 
 export default function Home() {
@@ -10,6 +11,9 @@ export default function Home() {
         <title>Hextech</title>
       </Head>
       <PostBox />
+      <div className="flex">
+        <Feed />
+      </div>
 
     </div>
   )
