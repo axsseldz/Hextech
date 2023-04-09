@@ -135,9 +135,29 @@ type Query {
       SELECT * FROM "post" 
       ORDER BY "post"."created_at" desc
       """
-      # table: "post"
       configuration: "postgresql_config"
     )
+  postListByTopic(topic: String!): [post]
+    @dbquery(
+      type: "postgresql"
+      query: """
+      SELECT *, "post".id as id FROM "post"
+      INNER JOIN "subreddit" ON "post".subreddit_id = "subreddit".id
+      WHERE "subreddit".topic = $1   
+      ORDER BY "post"."created_at" desc
+      """
+      configuration: "postgresql_config"
+    )
+  postListById(post_id: ID!): [post]
+    @dbquery(
+      type: "postgresql"
+      query: """
+      SELECT * FROM "post"
+      WHERE "post"."id" = $1   
+      """
+      configuration: "postgresql_config"
+    )
+
   postPaginatedList(first: Int, after: Int): [post]
     @dbquery(
       type: "postgresql"

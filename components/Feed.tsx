@@ -1,12 +1,20 @@
 import { useQuery } from '@apollo/client'
 import React from 'react'
-import { GET_POSTS } from '../graphql/queries'
+import { GET_POSTS, GET_POSTS_BY_TOPIC } from '../graphql/queries'
 import Post from './Post';
 
-function Feed() {
-    const { data, error } = useQuery(GET_POSTS)
+type Props = {
+    topic?: string
+}
 
-    const posts: Post[] = data?.postList;
+function Feed({ topic }: Props) {
+    const { data, error } = !topic ? useQuery(GET_POSTS) : useQuery(GET_POSTS_BY_TOPIC, {
+        variables: {
+            topic: topic
+        }
+    })
+
+    const posts: Post[] = !topic ? data?.postList : data?.postListByTopic;
 
 
     return (

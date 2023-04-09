@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { BeakerIcon, ChevronDownIcon, HomeIcon, MagnifyingGlassCircleIcon } from '@heroicons/react/24/solid'
 import { Bars3Icon, BellIcon, ChatBubbleLeftIcon, GlobeAltIcon, MegaphoneIcon, PlusIcon, SparklesIcon, UserCircleIcon, VideoCameraIcon } from '@heroicons/react/24/outline'
 import { signIn, signOut, useSession } from 'next-auth/react'
+import Link from 'next/link';
 
 
 
@@ -12,13 +13,15 @@ function Header() {
     return (
         <div className='flex sticky top-0 z-50 bg-black border-b-2 border-opacity-10 border-white px-4 py-2'>
             <div className='w-20 cursor-pointer flex-shrink-0'>
-                <Image
-                    priority
-                    width={63}
-                    height={63}
-                    alt='icon'
-                    src="https://i.pinimg.com/474x/f1/96/60/f196607455500932e070e475eaed8dff.jpg"
-                />
+                <Link href="/">
+                    <Image
+                        priority
+                        width={63}
+                        height={63}
+                        alt='icon'
+                        src="https://i.pinimg.com/474x/f1/96/60/f196607455500932e070e475eaed8dff.jpg"
+                    />
+                </Link>
             </div>
             <div className='flex items-center mx-7 lg:min-w-[200px]'>
                 <HomeIcon className='icon' />

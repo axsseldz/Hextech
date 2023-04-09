@@ -4,7 +4,7 @@ import PostBox from '@/components/PostBox'
 import { useRouter } from 'next/router'
 import React from 'react'
 
-function SubhextechPage() {
+function SubredditPage() {
     const { query: { topic } } = useRouter()
 
     return (
@@ -23,10 +23,10 @@ function SubhextechPage() {
 
             <div className="mx-auto mt-5 max-w-5xl pb-10">
                 <PostBox subreddit={topic as string} />
-                <Feed />
+                <Feed topic={topic as string} />
             </div>
         </div>
     )
 }
 
-export default SubhextechPage
+export default SubredditPage
