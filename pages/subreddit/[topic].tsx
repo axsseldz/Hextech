@@ -8,15 +8,15 @@ function SubredditPage() {
     const { query: { topic } } = useRouter()
 
     return (
-        <div className='h-24 bg-red-400 p-8 '>
-            <div className='-mx-8 mt-10 bg-white'>
+        <div className='h-24 bg-blue-500 p-8 '>
+            <div className='-mx-8 mt-10 bg-darkGray'>
                 <div className='mx-auto flex max-w-5xl items-center space-x-4 pb-3'>
                     <div className='-mt-5'>
                         <Avatar seed={topic as string} large />
                     </div>
                     <div className='py-2'>
-                        <h1 className='font-semibold text-3xl'>Welcome to the r/{topic} subhextech</h1>
-                        <p className='text-sm text-gray-400'>r/{topic}</p>
+                        <h1 className='font-semibold text-3xl text-white'>Welcome to the r/{topic} subreddit</h1>
+                        <p className='text-sm text-blue-500'>r/{topic}</p>
                     </div>
                 </div>
             </div>

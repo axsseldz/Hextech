@@ -117,55 +117,55 @@ function PostBox({ subreddit }: Props) {
     })
 
     return (
-        <form onSubmit={onSubmit} className='sticky top-20 z-50 p-2 rounded-md bg-slate-600 border border-gray-300'>
+        <form onSubmit={onSubmit} className='sticky top-20 z-50 p-2 rounded-md bg-darkGray border border-slate-600 hover:border-white'>
 
             <div className='flex items-center space-x-2'>
                 <Avatar />
                 <input
                     {...register('postTittle', { required: true })}
                     disabled={!session}
-                    className='flex-1 rounded-md bg-gray-50 p-2 pl-5 outline-none'
+                    className='flex-1 rounded-md bg-lightGray text-gray-400 p-2 pl-5 outline-none'
                     type='text'
                     placeholder={
                         session ? subreddit ? `Create a post in r/${subreddit}` : 'Create a post by entering a tittle' : 'Sign in to post'
                     }
                 />
-                <PhotoIcon onClick={() => setImageBoxOpen(!imageBoxOpen)} className={`icon ${imageBoxOpen && 'text-blue-500'}`} />
-                <LinkIcon className='icon' />
+                <PhotoIcon onClick={() => setImageBoxOpen(!imageBoxOpen)} className={`icon hover:text-reactBlue ${imageBoxOpen && 'text-reactBlue'}`} />
+                <LinkIcon className='icon hover:text-reactBlue' />
             </div>
 
             {!!watch('postTittle') && (
                 <div className='flex flex-col py-2'>
                     <div className='flex items-center px-2'>
-                        <p className='min-w-[90px]'>Body:</p>
+                        <p className='text-white min-w-[90px]'>Body:</p>
                         <input
                             type="text"
                             {...register('postBody')}
                             placeholder='text (optional)'
-                            className='m-2 p-2 flex-1 bg-blue-200 outline-none'
+                            className='m-2 p-2 flex-1 rounded-md bg-lightGray text-gray-400 outline-none'
                         />
                     </div>
 
                     {!subreddit && (
                         <div className='flex items-center px-2'>
-                            <p className='min-w-[90px]'>Subreddit:</p>
+                            <p className='text-white min-w-[90px]'>Subreddit:</p>
                             <input
                                 type="text"
                                 {...register('subreddit', { required: true })}
-                                placeholder='i.e. reactjs'
-                                className='m-2 p-2 flex-1 bg-blue-200 outline-none'
+                                placeholder='i.e. movies'
+                                className='m-2 p-2 flex-1 rounded-md bg-lightGray text-gray-400 outline-none'
                             />
                         </div>
                     )}
 
                     {imageBoxOpen && (
                         <div className='flex items-center px-2'>
-                            <p className='min-w-[90px]'>Image:</p>
+                            <p className='text-white min-w-[90px]'>Image:</p>
                             <input
                                 type="text"
                                 {...register('postImage')}
                                 placeholder='Optional...'
-                                className='m-2 p-2 flex-1 bg-blue-200 outline-none'
+                                className='m-2 p-2 flex-1 rounded-md bg-lightGray text-gray-400 outline-none'
                             />
                         </div>
                     )}
@@ -183,7 +183,7 @@ function PostBox({ subreddit }: Props) {
 
                     {!!watch('postTittle') && (
                         <button
-                            className='w-full rounded-full bg-blue-500 p-2 text-white'
+                            className='w-full rounded-full bg-blue-500 hover:bg-blue-400 p-2 text-white'
                             type='submit'
                         >
                             Create Post
