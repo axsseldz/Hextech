@@ -8,9 +8,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        gold: '#b29e67',
-        lightDark: '#141414',
-        borderColor: '#1b1b1b'
+        darkGray: '#21232a',
+        lightGray: '#282c34',
+        reactBlue: '#61dafb'
       }
     },
   },

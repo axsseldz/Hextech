@@ -376,6 +376,15 @@ type Mutation {
       dml: INSERT
       configuration: "postgresql_config"
     )
+  insertComment(post_id: ID!, username: String!, text: String!): comments
+    @dbquery(
+      type: "postgresql"
+      table: "comments"
+      dml: INSERT
+      configuration: "postgresql_config"
+    )
+
+
   updateSubreddit(id: ID!, created_at: DateTime, topic: String): subreddit
     @dbquery(
       type: "postgresql"

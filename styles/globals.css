@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,7 +7,7 @@
 
 @layer components {
   .icon {
-    @apply h-7 w-7 text-gold cursor-pointer mx-2
+    @apply h-6 w-6 text-white cursor-pointer mx-2
   }
 
   .hover-element {
@@ -21,8 +23,10 @@
   }
 }
 
-body {
-  background-color: #141414;
+@layer base {
+  html {
+    font-family: 'Poppins', sans-serif;
+  }
 }
 
 :root {
@@ -101,7 +105,6 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
 }
-
 
 
 a {

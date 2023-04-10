@@ -11,7 +11,7 @@ export default function App({ Component, pageProps: { session, ...pageProps } }:
     <ApolloProvider client={client}>
       <SessionProvider session={session}>
         <Toaster />
-        <div className='h-screen overflow-y-scroll bg-lightDark'>
+        <div className='h-screen overflow-y-scroll bg-lightGray'>
           <Header />
           <Component {...pageProps} />
         </div>
