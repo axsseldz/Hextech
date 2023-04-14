@@ -7,9 +7,10 @@ import { Jelly } from '@uiball/loaders'
 
 type Props = {
     post: Post
+    noBorder?: boolean
 }
 
-function Post({ post }: Props) {
+function Post({ post, noBorder }: Props) {
     if (!post) {
         return (
             <div className='flex w-full items-center justify-center p-10 text-xl'>
@@ -22,7 +23,7 @@ function Post({ post }: Props) {
     return (
         <div>
             <Link href={`/post/${post.id}`}>
-                <div className='flex cursor-pointer rounded-md bg-darkGray border border-slate-600 hover:border '>
+                <div className={`flex cursor-pointer rounded-md bg-darkGray border border-slate-600 ${!noBorder && 'hover:border-white'}`}>
 
                     {/* Votes */}
                     <div className='flex flex-col items-center justify-start space-y-1 rounded-l-md p-4 text-white'>

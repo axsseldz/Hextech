@@ -53,7 +53,7 @@ function PostPage() {
 
     return (
         <div className='mx-auto my-7 max-w-5xl border-0 hover:border-0'>
-            <Post post={post} />
+            <Post post={post} noBorder={true} />
 
             <div className='-mt-1 rounded-b-md border border-t-0 border-slate-600 bg-darkGray p-5 pl-16'>
                 <p className='text-sm text-white'>
