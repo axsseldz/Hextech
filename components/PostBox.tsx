@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { useMutation } from '@apollo/client';
 import { ADD_POST, ADD_SUBREDDIT } from '@/graphql/mutations';
 import { GET_POSTS, GET_SUBREDDIT_BY_TOPIC } from '@/graphql/queries';
-import client from '@/apollo-client';
+import client from '@/apollo/apollo-client';
 import { toast } from 'react-hot-toast';
 
 
