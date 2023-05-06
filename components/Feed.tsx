@@ -8,11 +8,19 @@ type Props = {
 }
 
 function Feed({ topic }: Props) {
-    const { data, error } = !topic ? useQuery(GET_POSTS) : useQuery(GET_POSTS_BY_TOPIC, {
-        variables: {
-            topic: topic
-        }
-    })
+    // const { data, error } = !topic ? useQuery(GET_POSTS) : useQuery(GET_POSTS_BY_TOPIC, {
+    //     variables: {
+    //         topic: topic
+    //     }
+    // })
+
+
+    const query = !topic ? GET_POSTS : GET_POSTS_BY_TOPIC;
+    const variables = !topic ? undefined : { topic };
+
+    const { data, error } = useQuery(query, {
+        variables,
+    });
 
     const posts: Post[] = !topic ? data?.postList : data?.postListByTopic;
 
