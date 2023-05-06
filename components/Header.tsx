@@ -16,6 +16,7 @@ function Header() {
                 <Link href="/">
                     <Image
                         priority
+                        className='w-5 h-5'
                         width={25}
                         height={25}
                         alt='icon'

@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["i.pinimg.com", "api.dicebear.com"]
+    domains: ["i.pinimg.com", "api.dicebear.com", "nextjs.org", "w7.pngwing.com"]
   },
   env: {
     API_KEY: process.env.API_KEY,
