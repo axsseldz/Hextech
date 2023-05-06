@@ -1,4 +1,4 @@
-##Hextech {color:red}
+## Hextech {color:red}
 
 <p align="center">
 This is a web application similar to Reddit where users can create, view, and interact with posts and communities. The app allows users to post anything, including images, and comment on existing posts. Additionally, users can create their own communities, called subreddits, where they can post and share content related to a specific topic or interest. The app also includes a sign in / log in system, although this feature is currently not available in the deployed production app to prevent spam due to limited database storage.
