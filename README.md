@@ -32,34 +32,5 @@ While the functionality to log in and sign up with a Reddit account is present, 
 ### GraphQL: A query language used to interact with APIs and fetch data from servers.
 ### Tailwind CSS: A utility-first CSS framework for building custom user interfaces.
 
-
-## Getting Started
-To use this app, you can either visit the deployed production app or clone the repository to your local machine and run it locally.
-
-
-## Prerequisites
-To run the app locally, you will need to have the following installed on your machine:
-
-Node.js
-PostgreSQL
-A Reddit API key (if you want to use the log in / sign in functionality)
-
-
-## Installation
-Clone the repository to your local machine using git clone.
-Navigate to the project directory and install the dependencies using npm install.
-Create a .env file in the root directory and add the necessary environment variables, such as the PostgreSQL connection string and Reddit API key.
-
-
-## Run the app using 
-1. Clone this repository and run:
-```sh
-npm install
-```
-2. Run the web app:
-```sh
-npm run dev
-```
-
 ## Contributing
 If you would like to contribute to this app, please create a pull request.
